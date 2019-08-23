@@ -8,10 +8,10 @@ import java.util.Date;
 
 @Entity
 @Data
-public class Gem {
+public class Metal {
     @Id
-    private String gemId;
-    private String gemType;
+    private String metalId;
+    private String metalType;
     private int carat;
     private double weight;
     private Date addedDate;

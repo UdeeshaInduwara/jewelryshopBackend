@@ -5,9 +5,9 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class GemDto {
-    private String gemId;
-    private String gemType;
+public class MetalDto {
+    private String metalId;
+    private String metalType;
     private int carat;
     private double weight;
     private Date addedDate;
