@@ -23,4 +23,15 @@ public class JewelryMakingDetails {
     private JewelryMaker jewelryMaker;
 
     private double givenMetalWeight;
+
+    public JewelryMakingDetails() {
+    }
+
+    public JewelryMakingDetails(Date givenDate, Metal metal, Gem gem, JewelryMaker jewelryMaker, double givenMetalWeight) {
+        this.givenDate = givenDate;
+        this.metal = metal;
+        this.gem = gem;
+        this.jewelryMaker = jewelryMaker;
+        this.givenMetalWeight = givenMetalWeight;
+    }
 }

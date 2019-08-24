@@ -17,4 +17,12 @@ public class JewelryMaker {
 
     @OneToMany(mappedBy = "jewelryMaker", cascade = CascadeType.ALL)
     private List<JewelryMakingDetails> jewelryMakingDetails = new ArrayList<>();
+
+    public JewelryMaker() {
+    }
+
+    public JewelryMaker(String jewMName, int contactNo) {
+        this.jewMName = jewMName;
+        this.contactNo = contactNo;
+    }
 }

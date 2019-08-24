@@ -22,4 +22,16 @@ public class Gem {
 
     @OneToMany(mappedBy = "gem", cascade = CascadeType.ALL)
     private List<JewelryMakingDetails> jewelryMakingDetails = new ArrayList<>();
+
+    public Gem() {
+    }
+
+    public Gem(String gemType, int carat, double weight, Date addedDate, Date givenDate, boolean availability) {
+        this.gemType = gemType;
+        this.carat = carat;
+        this.weight = weight;
+        this.addedDate = addedDate;
+        this.givenDate = givenDate;
+        this.availability = availability;
+    }
 }

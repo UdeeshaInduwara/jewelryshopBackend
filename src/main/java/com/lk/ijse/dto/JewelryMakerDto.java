@@ -8,6 +8,9 @@ public class JewelryMakerDto {
     private String jewMName;
     private int contactNo;
 
+    public JewelryMakerDto() {
+    }
+
     public JewelryMakerDto(int jewMId, String jewMName, int contactNo) {
         this.jewMId = jewMId;
         this.jewMName = jewMName;

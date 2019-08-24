@@ -20,4 +20,14 @@ public class Metal {
 
     @OneToMany(mappedBy = "metal", cascade = CascadeType.ALL)
     private List<JewelryMakingDetails> jewelryMakingDetails = new ArrayList<>();
+
+    public Metal() {
+    }
+
+    public Metal(String metalType, int carat, double weight, Date addedDate) {
+        this.metalType = metalType;
+        this.carat = carat;
+        this.weight = weight;
+        this.addedDate = addedDate;
+    }
 }

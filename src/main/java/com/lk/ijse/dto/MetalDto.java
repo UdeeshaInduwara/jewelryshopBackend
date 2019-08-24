@@ -12,6 +12,9 @@ public class MetalDto {
     private double weight;
     private Date addedDate;
 
+    public MetalDto() {
+    }
+
     public MetalDto(int metalId, String metalType, int carat, double weight, Date addedDate) {
         this.metalId = metalId;
         this.metalType = metalType;

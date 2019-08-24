@@ -12,6 +12,9 @@ public class GemDto {
     private double weight;
     private Date addedDate;
 
+    public GemDto() {
+    }
+
     public GemDto(int gemId, String gemType, int carat, double weight, Date addedDate) {
         this.gemId = gemId;
         this.gemType = gemType;
