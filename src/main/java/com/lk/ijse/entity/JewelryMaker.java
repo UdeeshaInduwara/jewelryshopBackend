@@ -2,10 +2,9 @@ package com.lk.ijse.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -15,4 +14,7 @@ public class JewelryMaker {
     private int jewMId;
     private String jewMName;
     private int contactNo;
+
+    @OneToMany(mappedBy = "jewelryMaker", cascade = CascadeType.ALL)
+    private List<JewelryMakingDetails> jewelryMakingDetails = new ArrayList<>();
 }
