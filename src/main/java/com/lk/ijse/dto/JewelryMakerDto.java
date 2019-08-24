@@ -4,7 +4,13 @@ import lombok.Data;
 
 @Data
 public class JewelryMakerDto {
-    private String jewMId;
+    private int jewMId;
     private String jewMName;
     private int contactNo;
+
+    public JewelryMakerDto(int jewMId, String jewMName, int contactNo) {
+        this.jewMId = jewMId;
+        this.jewMName = jewMName;
+        this.contactNo = contactNo;
+    }
 }

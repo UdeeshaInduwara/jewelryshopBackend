@@ -1,10 +1,12 @@
 package com.lk.ijse.controller;
 
+import com.lk.ijse.dto.MetalDto;
 import com.lk.ijse.service.MetalService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @RestController
 @CrossOrigin
@@ -13,4 +15,19 @@ public class MetalController {
 
     @Autowired
     private MetalService metalService;
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean saveMetal(@RequestBody MetalDto metal) {
+        return metalService.saveMetal(metal);
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<MetalDto> getAllMetal() {
+        return metalService.getAllMetal();
+    }
+
+    @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean deleteMetal(@PathVariable("id") int metalId) {
+        return metalService.deleteMetal(metalId);
+    }
 }
