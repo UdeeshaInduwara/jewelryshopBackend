@@ -18,7 +18,6 @@ public class Gem {
     private double weight;
     private Date addedDate;
     private Date givenDate;
-    private boolean availability;
 
     @OneToMany(mappedBy = "gem", cascade = CascadeType.ALL)
     private List<JewelryMakingDetails> jewelryMakingDetails = new ArrayList<>();
@@ -26,12 +25,11 @@ public class Gem {
     public Gem() {
     }
 
-    public Gem(String gemType, int carat, double weight, Date addedDate, Date givenDate, boolean availability) {
+    public Gem(String gemType, int carat, double weight, Date addedDate, Date givenDate) {
         this.gemType = gemType;
         this.carat = carat;
         this.weight = weight;
         this.addedDate = addedDate;
         this.givenDate = givenDate;
-        this.availability = availability;
     }
 }
