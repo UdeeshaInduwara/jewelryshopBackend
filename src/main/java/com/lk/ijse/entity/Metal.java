@@ -19,7 +19,7 @@ public class Metal {
     private Date addedDate;
 
     @OneToMany(mappedBy = "metal", cascade = CascadeType.ALL)
-    private List<JewelryMakingDetails> jewelryMakingDetails = new ArrayList<>();
+    private List<JewelryMakingOrder> jewelryMakingOrders = new ArrayList<>();
 
     public Metal() {
     }

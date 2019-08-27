@@ -37,7 +37,7 @@ public class GemServiceImpl implements GemService {
         ArrayList<GemDto> gemDtos = new ArrayList<>();
 
         for (Gem gem : gems) {
-            gemDtos.add(new GemDto(gem.getGemId(), gem.getGemType(), gem.getCarat(), gem.getWeight(), gem.getAddedDate()));
+            gemDtos.add(new GemDto(gem.getGemId(), gem.getGemType(), gem.getCarat(), gem.getWeight(), gem.getAddedDate(), gem.getGivenDate()));
         }
         return gemDtos;
     }

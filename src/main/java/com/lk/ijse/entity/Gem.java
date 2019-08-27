@@ -20,7 +20,7 @@ public class Gem {
     private Date givenDate;
 
     @OneToMany(mappedBy = "gem", cascade = CascadeType.ALL)
-    private List<JewelryMakingDetails> jewelryMakingDetails = new ArrayList<>();
+    private List<JewelryMakingOrder> jewelryMakingOrders = new ArrayList<>();
 
     public Gem() {
     }

@@ -16,7 +16,7 @@ public class JewelryMaker {
     private int contactNo;
 
     @OneToMany(mappedBy = "jewelryMaker", cascade = CascadeType.ALL)
-    private List<JewelryMakingDetails> jewelryMakingDetails = new ArrayList<>();
+    private List<JewelryMakingOrder> jewelryMakingOrders = new ArrayList<>();
 
     public JewelryMaker() {
     }

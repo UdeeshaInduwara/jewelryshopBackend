@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 import java.util.Date;
 
 @Entity
-public class JewelryMakingDetails {
+public class JewelryMakingOrder {
     @Id
     @GeneratedValue
     private int jewMDId;
@@ -24,10 +24,10 @@ public class JewelryMakingDetails {
 
     private double givenMetalWeight;
 
-    public JewelryMakingDetails() {
+    public JewelryMakingOrder() {
     }
 
-    public JewelryMakingDetails(Date givenDate, Metal metal, Gem gem, JewelryMaker jewelryMaker, double givenMetalWeight) {
+    public JewelryMakingOrder(Date givenDate, Metal metal, Gem gem, JewelryMaker jewelryMaker, double givenMetalWeight) {
         this.givenDate = givenDate;
         this.metal = metal;
         this.gem = gem;
