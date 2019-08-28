@@ -1,6 +1,7 @@
 package com.lk.ijse.controller;
 
 import com.lk.ijse.dto.MetalDto;
+import com.lk.ijse.dto.UpdateMetalDto;
 import com.lk.ijse.service.MetalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -29,5 +30,10 @@ public class MetalController {
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean deleteMetal(@PathVariable("id") int metalId) {
         return metalService.deleteMetal(metalId);
+    }
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public boolean updateMetal(@RequestBody UpdateMetalDto metal) {
+        return metalService.updateMetal(metal);
     }
 }

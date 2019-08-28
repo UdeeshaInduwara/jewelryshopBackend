@@ -1,6 +1,7 @@
 package com.lk.ijse.service.impl;
 
 import com.lk.ijse.dto.MetalDto;
+import com.lk.ijse.dto.UpdateMetalDto;
 import com.lk.ijse.entity.Metal;
 import com.lk.ijse.repository.MetalRepository;
 import com.lk.ijse.service.MetalService;
@@ -45,6 +46,13 @@ public class MetalServiceImpl implements MetalService {
     @Override
     public boolean deleteMetal(int id) {
         metalRepository.deleteById(id);
+        return true;
+    }
+
+    @Override
+    public boolean updateMetal(UpdateMetalDto dto) {
+        Metal metal = metalRepository.findById(dto.getMetalId()).get();
+        metal.setWeight((metal.getWeight() + dto.getUpdatedWeight()));
         return true;
     }
 }
