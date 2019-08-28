@@ -41,9 +41,11 @@ public class JewelryMakingOrderServiceImpl implements JewelryMakingOrderService 
 
         Gem gem = gemRepository.findById(dto.getGem().getGemId()).get();
         jewelryMakingOrder.setGem(gem);
+        gem.setGivenDate(dto.getGivenDate());
 
         Metal metal = metalRepository.findById(dto.getMetal().getMetalId()).get();
         jewelryMakingOrder.setMetal(metal);
+        metal.setWeight((metal.getWeight() - dto.getGivenMetalWeight()));
 
         JewelryMaker jewelryMaker = jewelryMakerRepository.findById(dto.getJewelryMaker().getJewMId()).get();
         jewelryMakingOrder.setJewelryMaker(jewelryMaker);
