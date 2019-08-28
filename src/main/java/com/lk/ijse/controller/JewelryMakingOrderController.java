@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @RestController
 @CrossOrigin
 @RequestMapping(value = "api/v1/jewelryMakingOrder")
@@ -15,7 +17,12 @@ public class JewelryMakingOrderController {
     private JewelryMakingOrderService jewelryMakingOrderService;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public boolean saveJewelryMaker(@RequestBody JewelryMakingOrderDto jewelryMakingOrderDto) {
+    public boolean saveJewelryMakingOrder(@RequestBody JewelryMakingOrderDto jewelryMakingOrderDto) {
         return jewelryMakingOrderService.placeOrder(jewelryMakingOrderDto);
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ArrayList<JewelryMakingOrderDto> getAllJewelryMakingOrders() {
+        return jewelryMakingOrderService.getAllOrders();
     }
 }

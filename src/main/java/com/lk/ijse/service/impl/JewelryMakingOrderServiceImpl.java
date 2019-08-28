@@ -15,6 +15,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -52,5 +55,23 @@ public class JewelryMakingOrderServiceImpl implements JewelryMakingOrderService 
 
         jewelryMakingOrderRepository.save(jewelryMakingOrder);
         return true;
+    }
+
+    @Override
+    public ArrayList<JewelryMakingOrderDto> getAllOrders() {
+        List<JewelryMakingOrder> jewelryMakingOrders = jewelryMakingOrderRepository.findAll();
+        ArrayList<JewelryMakingOrderDto> orderDtos = new ArrayList<>();
+
+        for (JewelryMakingOrder order : jewelryMakingOrders) {
+            orderDtos.add(new JewelryMakingOrderDto(
+                    order.getJewMDId(),
+                    order.getGivenDate(),
+                    order.getMetal(),
+                    order.getGem(),
+                    order.getJewelryMaker(),
+                    order.getGivenMetalWeight()));
+        }
+
+        return orderDtos;
     }
 }
