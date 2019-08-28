@@ -11,15 +11,15 @@ import java.util.Date;
 public class JewelryMakingOrderDto {
     private int jewMDId;
     private Date givenDate;
-    private Metal metal;
-    private Gem gem;
-    private JewelryMaker jewelryMaker;
+    private MetalDto metal;
+    private GemDto gem;
+    private JewelryMakerDto jewelryMaker;
     private double givenMetalWeight;
 
     public JewelryMakingOrderDto() {
     }
 
-    public JewelryMakingOrderDto(int jewMDId, Date givenDate, Metal metal, Gem gem, JewelryMaker jewelryMaker, double givenMetalWeight) {
+    public JewelryMakingOrderDto(int jewMDId, Date givenDate, MetalDto metal, GemDto gem, JewelryMakerDto jewelryMaker, double givenMetalWeight) {
         this.jewMDId = jewMDId;
         this.givenDate = givenDate;
         this.metal = metal;

@@ -1,6 +1,9 @@
 package com.lk.ijse.service.impl;
 
+import com.lk.ijse.dto.GemDto;
+import com.lk.ijse.dto.JewelryMakerDto;
 import com.lk.ijse.dto.JewelryMakingOrderDto;
+import com.lk.ijse.dto.MetalDto;
 import com.lk.ijse.entity.Gem;
 import com.lk.ijse.entity.JewelryMaker;
 import com.lk.ijse.entity.JewelryMakingOrder;
@@ -66,9 +69,9 @@ public class JewelryMakingOrderServiceImpl implements JewelryMakingOrderService 
             orderDtos.add(new JewelryMakingOrderDto(
                     order.getJewMDId(),
                     order.getGivenDate(),
-                    order.getMetal(),
-                    order.getGem(),
-                    order.getJewelryMaker(),
+                    new MetalDto(order.getMetal().getMetalId(), order.getMetal().getMetalType(), order.getMetal().getCarat(), order.getMetal().getWeight(), order.getMetal().getAddedDate()),
+                    new GemDto(order.getGem().getGemId(), order.getGem().getGemType(), order.getGem().getCarat(), order.getGem().getWeight(), order.getGem().getAddedDate(), order.getGem().getGivenDate()),
+                    new JewelryMakerDto(order.getJewelryMaker().getJewMId(), order.getJewelryMaker().getJewMName(), order.getJewelryMaker().getContactNo()),
                     order.getGivenMetalWeight()));
         }
 
