@@ -53,6 +53,7 @@ public class MetalServiceImpl implements MetalService {
     public boolean updateMetal(UpdateMetalDto dto) {
         Metal metal = metalRepository.findById(dto.getMetalId()).get();
         metal.setWeight((metal.getWeight() + dto.getUpdatedWeight()));
+        metalRepository.save(metal);
         return true;
     }
 }
