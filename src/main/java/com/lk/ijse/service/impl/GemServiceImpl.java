@@ -33,7 +33,7 @@ public class GemServiceImpl implements GemService {
 
     @Override
     public ArrayList<GemDto> getAllGem() {
-        List<Gem> gems = gemRepository.findAll();
+        List<Gem> gems = gemRepository.getGemByGivenDate(null);
         ArrayList<GemDto> gemDtos = new ArrayList<>();
 
         for (Gem gem : gems) {
