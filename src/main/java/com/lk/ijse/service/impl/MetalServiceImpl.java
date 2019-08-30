@@ -56,4 +56,9 @@ public class MetalServiceImpl implements MetalService {
         metalRepository.save(metal);
         return true;
     }
+
+    @Override
+    public int getMetalsCount() {
+        return metalRepository.getMetalCount();
+    }
 }

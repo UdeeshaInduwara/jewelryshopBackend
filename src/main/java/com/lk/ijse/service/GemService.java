@@ -10,4 +10,6 @@ public interface GemService {
     ArrayList<GemDto> getAllGem();
 
     boolean deleteGem(int id);
+
+    int getGemCount();
 }

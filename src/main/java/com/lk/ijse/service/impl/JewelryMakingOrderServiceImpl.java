@@ -77,4 +77,9 @@ public class JewelryMakingOrderServiceImpl implements JewelryMakingOrderService 
 
         return orderDtos;
     }
+
+    @Override
+    public int getOrdersCount() {
+        return jewelryMakingOrderRepository.getOrdersCount();
+    }
 }

@@ -30,4 +30,9 @@ public class GemController {
     public boolean deleteGem(@PathVariable("id") int gemId) {
         return gemService.deleteGem(gemId);
     }
+
+    @GetMapping(value = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
+    public int getGemCount() {
+        return gemService.getGemCount();
+    }
 }

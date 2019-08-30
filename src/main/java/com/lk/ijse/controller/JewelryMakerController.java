@@ -30,4 +30,9 @@ public class JewelryMakerController {
     public boolean deleteJewelryMaker(@PathVariable("id") int jewelryMakerId) {
         return jewelryMakerService.deleteJewelryMaker(jewelryMakerId);
     }
+
+    @GetMapping(value = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
+    public int getJewelryMakersCount() {
+        return jewelryMakerService.getJewelryMakersCount();
+    }
 }

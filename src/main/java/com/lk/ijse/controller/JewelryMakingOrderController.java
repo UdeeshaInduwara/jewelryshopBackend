@@ -25,4 +25,9 @@ public class JewelryMakingOrderController {
     public ArrayList<JewelryMakingOrderDto> getAllJewelryMakingOrders() {
         return jewelryMakingOrderService.getAllOrders();
     }
+
+    @GetMapping(value = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
+    public int getJewelryMakingOrdersCount() {
+        return jewelryMakingOrderService.getOrdersCount();
+    }
 }

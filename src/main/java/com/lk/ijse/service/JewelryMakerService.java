@@ -10,4 +10,6 @@ public interface JewelryMakerService {
     ArrayList<JewelryMakerDto> getAllJewelryMaker();
 
     boolean deleteJewelryMaker(int id);
+
+    int getJewelryMakersCount();
 }

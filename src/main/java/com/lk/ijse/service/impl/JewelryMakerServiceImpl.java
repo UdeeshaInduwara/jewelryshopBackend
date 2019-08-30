@@ -45,4 +45,9 @@ public class JewelryMakerServiceImpl implements JewelryMakerService {
         jewelryMakerRepository.deleteById(id);
         return true;
     }
+
+    @Override
+    public int getJewelryMakersCount() {
+        return jewelryMakerRepository.getMakersCount();
+    }
 }

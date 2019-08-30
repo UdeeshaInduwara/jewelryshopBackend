@@ -8,4 +8,6 @@ public interface JewelryMakingOrderService {
     boolean placeOrder(JewelryMakingOrderDto jewelryMakingOrderDto);
 
     ArrayList<JewelryMakingOrderDto> getAllOrders();
+
+    int getOrdersCount();
 }

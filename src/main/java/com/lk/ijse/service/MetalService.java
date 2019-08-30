@@ -13,4 +13,6 @@ public interface MetalService {
     boolean deleteMetal(int id);
 
     boolean updateMetal(UpdateMetalDto dto);
+
+    int getMetalsCount();
 }

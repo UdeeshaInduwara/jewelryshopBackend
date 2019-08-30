@@ -36,4 +36,9 @@ public class MetalController {
     public boolean updateMetal(@RequestBody UpdateMetalDto metal) {
         return metalService.updateMetal(metal);
     }
+
+    @GetMapping(value = "/count", produces = MediaType.APPLICATION_JSON_VALUE)
+    public int getMetalCount() {
+        return metalService.getMetalsCount();
+    }
 }

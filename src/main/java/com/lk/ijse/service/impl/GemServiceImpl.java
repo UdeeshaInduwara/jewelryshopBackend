@@ -48,4 +48,9 @@ public class GemServiceImpl implements GemService {
         gemRepository.deleteById(id);
         return true;
     }
+
+    @Override
+    public int getGemCount() {
+        return gemRepository.getGemCount();
+    }
 }
